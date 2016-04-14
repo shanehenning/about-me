@@ -11,6 +11,7 @@
   var q = 0;
 
 //Questions 1-5
+function firstFive() {
   for (x = 0; x < questionBank.length; x++) {
     var response = prompt(questionBank[x]);
     console.log('The user says ' + response);
@@ -21,7 +22,9 @@
       q += 1;
     }
   }
+}
 //Question 6
+function questionSix() {
   while (y < 3){
     var y = 0;
     y ++;
@@ -39,7 +42,9 @@
       alert('That\'s right! ' + response + ' is my favorite number!\r\rAre you ready for the last question? I bet you are!');
     }
   }
+}
 //Question 7
+function questionSeven() {
   var z = 0;
   while (z < 5){
     z ++;
@@ -54,5 +59,5 @@
     }
   }
   alert('Way to go!  You got ' + q + ' out of 7 questions correct!\r\rThat\'s ' + parseInt(q / 7 * 100) + '%!');
-
+}
 // }
