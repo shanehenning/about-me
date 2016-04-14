@@ -53,4 +53,4 @@ function gameClick(){
     }
   }
   alert('Way to go!  You got ' + q + ' out of 7 questions correct!\r\rThat\'s ' + parseInt(q / 7 * 100) + '%!');
-}
+} 
