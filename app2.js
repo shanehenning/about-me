@@ -44,7 +44,7 @@ function gameClick(){
     z ++;
     var response = prompt('Question 7 of 7:\rCan you guess one of my favorite colors?\r\rThis time I\'ll give you six tries.');
     console.log('The user says ' + response);
-    if (response == favColor[0] || response == favColor[1] || response == favColor[2]){
+    if (response.toLowerCase() == favColor[0] || response.toLowerCase() == favColor[1] || response.toLowerCase() == favColor[2]){
       z = 5;
       q += 1;
       alert('That\'s right!, ' + response + ' is one of my favorite colors!\r\rThat was the last one! Let\'s see how you did!');
