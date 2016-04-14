@@ -39,3 +39,4 @@ function gameClick(){
   // alert('You did it!\rThat took about as long as the DMV.\rWay to power through!');
 
 }
+()
