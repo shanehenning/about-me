@@ -1,4 +1,5 @@
-function gameClick(){
+// function gameClick(){
+
   var userName = prompt('Hi! What is your name?');
   console.log('The user said their name was ' + userName);
   var game = alert('Hi ' + userName + ', you seem like a fun human! Wanna play a super fun game?');
@@ -21,8 +22,8 @@ function gameClick(){
     }
   }
 //Question 6
-  var y = 0;
   while (y < 3){
+    var y = 0;
     y ++;
     var response = prompt('Question 6 of 7:\rCan you guess my favorite number!\r\r(I\'ll give you four tries! Hint: It\'s between 1-10)');
     console.log('The user says ' + response);
@@ -53,4 +54,5 @@ function gameClick(){
     }
   }
   alert('Way to go!  You got ' + q + ' out of 7 questions correct!\r\rThat\'s ' + parseInt(q / 7 * 100) + '%!');
-} 
+
+// }
