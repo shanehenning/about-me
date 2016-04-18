@@ -1,89 +1,68 @@
-var userName = prompt('Hi! What is your name?');
-console.log('The user said their name was ' + userName);
+function gameClick(){
 
-game();
-function game(){
-  var game = prompt('Hi ' + userName + ', you seem like a fun human! Wanna play a super fun game?');
-  console.log('The user says ' + game);
-  if (game.toLowerCase() === 'y' || game.toLowerCase() === 'yes'){
-    alert('Excellent choice!\r\rHere come five awesome "yes" or "no" questions about yours truly.');
+  var userName = prompt('Hi! What is your name?');
+  console.log('The user said their name was ' + userName);
+  var game = alert('Hi ' + userName + ', you seem like a fun human! Wanna play a super fun game?');
 
-    function wolves(){
-      var userWolves = prompt('Question 1 of 5: \rOk, ' + userName + ', Yes or No: I was raised by wolves?');
-      console.log('The user says ' + userWolves);
-      if (userWolves.toLowerCase() === 'y' || userWolves.toLowerCase() === 'yes'){
-        alert('Turns out, no, I was raised by real people.\r\rOk, here comes the next question!');
-      } else if(userWolves === 'n' || userWolves === 'no'){
-        alert('That\'s right! I was raised by real people!\r\rOk, here comes the next question!');
+  var questionBank = ['Question 1 of 7: \rOk, ' + userName + ', Yes or No: I was raised by wolves?', 'Question 2 of 7: \rI\'m allergic to jalapenos?', 'Question 3 of 7: \rI am a descendent of Abraham Lincoln?', 'Question 4 of 7: \rI have a pet chameleon?', 'Question 5 of 7:\rI\'m a phenomenal dancer?'];
+  var incorrect = ['Turns out, no, I was raised by real people.\r\rOk, here comes the next question!', 'Ha! I am not! Some like it hot, and I am that some!\r\rAlright here\'s the next one!', 'I cannot lie, I am not related to the Vampire Slayer.\r\rHow about another question?!', 'I wish! My landlord doesn\'t allow awesome!\r\rHere comes the next question!'];
+  var correct = ['That\'s right! I was raised by real people!\r\rOk, here comes the next question!', 'Correct ' + userName + '! And thank goodness! Nachos wouldn\'t be the same!\r\rAlright here\'s the next one!', 'Lucky guess? You got it ' + userName + '!\r\rHow about another question?!', 'You\'re so good at this game ' + userName + '!\rAlas my home is not that exciting...\r\rHere comes the next question!', 'Too true. Too true.', 'That\'s not a number! Let\'s try that again!'];
+  var yesNoWords = ['no', 'no', 'no', 'no', 'no'];
+  var yesNoLetters = ['n', 'n', 'n', 'n', 'n'];
+  var favColor = ['blue', 'red', 'purple'];
+  var q = 0;
+
+//Questions 1-5
+  function firstFive() {
+    for (x = 0; x < questionBank.length; x++) {
+      var response = prompt(questionBank[x]);
+      console.log('The user says ' + response);
+      if (response.toLowerCase() === yesNoWords[x] || response.toLowerCase() === yesNoLetters[x]){
+        alert(correct[x]);
+        q += 1;
       } else{
-        alert('That\'s not how you play! You have to answer either yes or no!');
-        wolves();
+        alert(incorrect[x]);
       }
-    };
-    wolves();
-
-    function jalapeno(){
-      var userJalapeno = prompt('Question 2 of 5: \rI\'m allergic to jalapenos?');
-      console.log('The user says ' + userJalapeno);
-      if (userJalapeno.toLowerCase() === 'y' || userJalapeno.toLowerCase() === 'yes'){
-        alert('Ha! I am not! Some like it hot, and I am that some!\r\rAlright here\'s the next one!');
-      } else if(userJalapeno === 'n' || userJalapeno === 'no'){
-        alert('Correct ' + userName + '! And thank goodness! Nachos wouldn\'t be the same!\r\rAlright here\'s the next one!');
-      } else{
-        alert('That\'s not how you play! You have to answer either yes or no!');
-        jalapeno();
-      }
-    };
-    jalapeno();
-
-    function descendent(){
-      var userDescendent = prompt('Question 3 of 5: \rI am a descendent of Abraham Lincoln?');
-      console.log('The user says ' + userDescendent);
-      if (userDescendent.toLowerCase() === 'y' || userDescendent.toLowerCase() === 'yes'){
-        alert('I cannot lie, I am not related to the Vampire Slayer.\r\rHow about another question?!');
-      } else if(userDescendent === 'n' || userDescendent === 'no'){
-        alert('Lucky guess? You got it ' + userName + '!\r\rHow about another question?!');
-      } else{
-        alert('That\'s not how you play! You have to answer either yes or no!');
-        descendent();
-      }
-    };
-    descendent();
-
-    function chameleon(){
-      var userChameleon = prompt('Question 4 of 5: \rI have a pet chameleon?');
-      console.log('The user says ' + userChameleon);
-      if (userChameleon.toLowerCase() === 'y' || userChameleon.toLowerCase() === 'yes'){
-        alert('I wish! My landlord doesn\'t allow awesome!\r\rReady for the last question? I bet you are!');
-      } else if(userChameleon === 'n' || userChameleon === 'no'){
-        alert('You\'re so good at this game ' + userName + '!\rAlas my home is not that exciting...\r\rReady for the last question? I bet you are!');
-      } else{
-        alert('That\'s not how you play! You have to answer either yes or no!');
-        chameleon();
-      }
-    };
-    chameleon();
-
-    function dance(){
-      var userDance = prompt('Last Question!\rThis one\'s worth 3x\'s as many points as the others!\r\rI\'m a phenomenal dancer?');
-      console.log('The user says ' + userDance);
-      if (userDance.toLowerCase() === 'y' || userDance.toLowerCase() === 'yes'){
-        alert('My whiteness prohibits any dancing skill.');
-      } else if(userDance === 'n' || userDance === 'no'){
-        alert('Too true. Too true.');
-      } else{
-        alert('That\'s not how you play! You have to answer either yes or no!');
-        dance();
-      }
-    };
-    dance();
-    alert('You did it!\rThat took about as long as the SAT\'s.\rWay to power through!');
+    }
   }
-//game terminal code, if user says "no" to playing game
-  else if(game === 'n' || game === 'no'){
-    alert('Obviously, you don\'t want to have your life changed!\r\rBut feel free to check out the rest of this awe-inspiring website!');
-  }else{
-    alert('That wasn\'t a "yes" or "no", let\'s try that again!');
-    game();
+//Question 6
+  function questionSix() {
+    var y = 0;
+    while (y < 4){
+      y ++;
+      var response = prompt('Question 6 of 7:\rCan you guess my favorite number!\r\r(I\'ll give you four tries! Hint: It\'s between 1-10)');
+      console.log('The user says ' + response);
+      if(parseInt(response) < 7){
+        alert('Too low!');
+      } else if(response > 7){
+        alert('Too high!');
+      } else if (isNaN(response)){
+        alert('That\'s not a number!');
+      } else{
+        y = 4;
+        q += 1;
+        alert('That\'s right! ' + response + ' is my favorite number!\r\rAre you ready for the last question? I bet you are!');
+      }
+    }
   }
-};
+//Question 7
+  function questionSeven() {
+    var z = 0;
+    while (z < 5){
+      z ++;
+      var response = prompt('Question 7 of 7:\rCan you guess one of my favorite colors?\r\rThis time I\'ll give you six tries.');
+      console.log('The user says ' + response);
+      if (response.toLowerCase() == favColor[0] || response.toLowerCase() == favColor[1] || response.toLowerCase() == favColor[2]){
+        z = 5;
+        q += 1;
+        alert('That\'s right!, ' + response + ' is one of my favorite colors!\r\rThat was the last one! Let\'s see how you did!');
+      } else {
+        alert('Try again!');
+      }
+    }
+    alert('Way to go!  You got ' + q + ' out of 7 questions correct!\r\rThat\'s ' + parseInt(q / 7 * 100) + '%!');
+  }
+  firstFive();
+  questionSix();
+  questionSeven();
+}
